@@ -7,7 +7,6 @@ defmodule LazyContext.Mixfile do
       version: "0.1.0-dev",
       deps: deps(),
       elixir: "~> 1.5",
-
       build_embedded: Mix.env() == :prod,
       start_permanent: Mix.env() == :prod,
       description: description(),
@@ -29,7 +28,6 @@ defmodule LazyContext.Mixfile do
   # Run "mix help compile.app" to learn about applications.
   def application do
     [
-      mod: {LazyContext, []},
       extra_applications: [:logger]
     ]
   end

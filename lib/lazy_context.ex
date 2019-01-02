@@ -4,6 +4,8 @@ defmodule LazyContext do
   creating data around an Ecto Schema.
   """
 
+  @repo Application.get_env(:lazy_context, :repo)
+
   @doc """
   Inserts functions around an Ecto Schema.
   """
@@ -17,7 +19,7 @@ defmodule LazyContext do
       end
 
     preloads = Keyword.get(opts, :preloads, [])
-    repo = Keyword.get(opts, :repo)
+    repo = Keyword.get(opts, :repo) || @repo
 
     create_or_update_uniqueness_keys = Keyword.get(opts, :create_or_update_uniqueness_keys, [:id])
 
