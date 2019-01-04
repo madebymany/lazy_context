@@ -4,7 +4,7 @@ defmodule LazyContext.Mixfile do
   def project do
     [
       app: :lazy_context,
-      version: "0.1.0-dev",
+      version: "0.1.1-dev",
       deps: deps(),
       elixir: "~> 1.5",
       build_embedded: Mix.env() == :prod,
@@ -21,26 +21,8 @@ defmodule LazyContext.Mixfile do
         main: "LazyContext", # The main page in the docs
         # logo: "path/to/logo.png",
         extras: ["README.md"]
-      ]
-    ]
-  end
-
-  # Run "mix help compile.app" to learn about applications.
-  def application do
-    [
-      extra_applications: [:logger]
-    ]
-  end
-
-  defp elixirc_paths(:test), do: ["test/support", "lib"]
-  defp elixirc_paths(_), do: ["lib"]
-
-  # Run "mix help deps" to learn about dependencies.
-  defp deps do
-    [
-      {:ecto, "~> 3.0"},
-      {:dialyxir, "~> 0.5", only: :dev, runtime: false},
-      {:ex_doc, "~> 0.18.0", only: :dev, runtime: false}
+      ],
+      aliases: aliases()
     ]
   end
 
@@ -53,6 +35,33 @@ defmodule LazyContext.Mixfile do
       licenses: ["Apache 2.0"],
       maintainers: ["Kat Lynch"],
       links: %{"GitHub" => "https://github.com/madebymany/lazy_context"}
+    ]
+  end
+
+  # Run "mix help compile.app" to learn about applications.
+  def application do
+    [extra_applications: [:logger]]
+  end
+
+  defp elixirc_paths(:test), do: ["test/support", "lib"]
+  defp elixirc_paths(_), do: ["lib"]
+
+  # Run "mix help deps" to learn about dependencies.
+  defp deps do
+    [
+      {:ecto, "~> 3.0"},
+      {:dialyxir, "~> 0.5", only: :dev, runtime: false},
+      {:ex_doc, "~> 0.18.0", only: :dev, runtime: false},
+      {:postgrex, ">= 0.0.0", only: [:dev, :test]},
+      {:ecto_sql, "~> 3.0-rc.1", only: [:dev, :test]},
+      {:ex_machina, "~> 2.2", only: :test}
+    ]
+  end
+
+  defp aliases do
+    [
+      # Ensures database is reset before tests are run
+      "test": ["ecto.create --quiet", "ecto.migrate", "test"]
     ]
   end
 end
