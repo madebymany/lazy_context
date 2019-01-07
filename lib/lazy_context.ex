@@ -216,9 +216,10 @@ defmodule LazyContext do
 
       @doc """
       Creates an "empty" `%#{unquote(schema)}{}`, if valid. Equivalent to calling `create_#{unquote(suffix)}`(%{})
+
       ## Examples
-        iex> create_#{unquote(suffix)}()
-        {:ok, %#{unquote(schema)}{}}
+          iex> create_#{unquote(suffix)}()
+          {:ok, %#{unquote(schema)}{}}
 
       generated via the `LazyContext.__using__/1` macro.
       """
@@ -229,10 +230,10 @@ defmodule LazyContext do
       Creates a `%#{unquote(schema)}{}`
 
       ## Examples
-        iex> create_#{unquote(suffix)}(%{field: value})
-        {:ok, %#{unquote(schema)}{}}
-        iex> create_#{unquote(suffix)}(%{field: bad_value})
-        {:error, %Ecto.Changeset{}}
+          iex> create_#{unquote(suffix)}(%{field: value})
+          {:ok, %#{unquote(schema)}{}}
+          iex> create_#{unquote(suffix)}(%{field: bad_value})
+          {:error, %Ecto.Changeset{}}
 
       generated via the `LazyContext.__using__/1` macro.
       """
@@ -250,8 +251,8 @@ defmodule LazyContext do
       Raises if the changeset is invalid.
 
       ## Examples
-        iex> create_#{unquote(suffix)}!()
-        %#{unquote(schema)}{}
+          iex> create_#{unquote(suffix)}!()
+          %#{unquote(schema)}{}
 
       generated via the `LazyContext.__using__/1` macro.
       """
@@ -264,8 +265,8 @@ defmodule LazyContext do
       Raises if the changeset is invalid.
 
       ## Examples
-        iex> create_#{unquote(suffix)}!(%{field: value})
-        %#{unquote(schema)}{}
+          iex> create_#{unquote(suffix)}!(%{field: value})
+          %#{unquote(schema)}{}
 
       generated via the `LazyContext.__using__/1` macro.
       """
@@ -283,10 +284,10 @@ defmodule LazyContext do
       Whether a `%#{unquote(schema)}{}` already exists is determined by a lookup on the following fields: #{inspect unquote(create_or_update_uniqueness_keys)}
 
       ## Examples
-        iex> create_or_update#{unquote(suffix)}(%{field: value})
-        {:ok, %#{unquote(schema)}{}}
-        iex> create_#{unquote(suffix)}(%{field: bad_value})
-        {:error, %Ecto.Changeset{}}
+          iex> create_or_update#{unquote(suffix)}(%{field: value})
+          {:ok, %#{unquote(schema)}{}}
+          iex> create_#{unquote(suffix)}(%{field: bad_value})
+          {:error, %Ecto.Changeset{}}
 
       generated via the `LazyContext.__using__/1` macro.
       """
@@ -306,8 +307,8 @@ defmodule LazyContext do
       Raises if the changeset is invalid
 
       ## Examples
-        iex> create_or_update#{unquote(suffix)}!(%{field: value})
-        %#{unquote(schema)}{}
+          iex> create_or_update#{unquote(suffix)}!(%{field: value})
+          %#{unquote(schema)}{}
 
       generated via the `LazyContext.__using__/1` macro.
       """
@@ -323,10 +324,10 @@ defmodule LazyContext do
       Updates a `%#{unquote(schema)}{}`
 
       ## Examples
-        iex> update_#{unquote(suffix)}(%#{unquote(schema)}{}, %{field: value})
-        {:ok, %#{unquote(schema)}{}}
-        iex> update_#{unquote(suffix)}(%#{unquote(schema)}{}, %{field: bad_value})
-        {:error, %Ecto.Changeset{}}
+          iex> update_#{unquote(suffix)}(%#{unquote(schema)}{}, %{field: value})
+          {:ok, %#{unquote(schema)}{}}
+          iex> update_#{unquote(suffix)}(%#{unquote(schema)}{}, %{field: bad_value})
+          {:error, %Ecto.Changeset{}}
 
       generated via the `LazyContext.__using__/1` macro.
       """
@@ -343,8 +344,8 @@ defmodule LazyContext do
       Raises if the changeset is invalid
 
       ## Examples
-        iex> update_#{unquote(suffix)}!(%#{unquote(schema)}{}, %{field: value})
-        %#{unquote(schema)}{}
+          iex> update_#{unquote(suffix)}!(%#{unquote(schema)}{}, %{field: value})
+          %#{unquote(schema)}{}
 
       generated via the `LazyContext.__using__/1` macro.
       """
@@ -359,10 +360,10 @@ defmodule LazyContext do
       deletes a `%#{unquote(schema)}{}`
 
       ## Examples
-        iex> delete_#{unquote(suffix)}(%#{unquote(schema)}{})
-        {:ok, %#{unquote(schema)}{}}
-        iex> delete_#{unquote(suffix)}(%#{unquote(schema)}{})
-        {:error, %Ecto.Changeset{}}
+          iex> delete_#{unquote(suffix)}(%#{unquote(schema)}{})
+          {:ok, %#{unquote(schema)}{}}
+          iex> delete_#{unquote(suffix)}(%#{unquote(schema)}{})
+          {:error, %Ecto.Changeset{}}
 
       generated via the `LazyContext.__using__/1` macro.
       """
@@ -378,8 +379,8 @@ defmodule LazyContext do
       Raises if deletion fails
 
       ## Examples
-        iex> delete_#{unquote(suffix)}!(%#{unquote(schema)}{})
-        %#{unquote(schema)}{}
+          iex> delete_#{unquote(suffix)}!(%#{unquote(schema)}{})
+          %#{unquote(schema)}{}
 
       generated via the `LazyContext.__using__/1` macro.
       """
@@ -391,9 +392,10 @@ defmodule LazyContext do
 
       @doc """
       Returns a data structure for tracking `%#{unquote(schema)}{}` changes.
+
       ## Examples
-      iex> change_#{unquote(suffix)}(%#{unquote(schema)}{}, %{field: value})
-      %Ecto.Changeset{}
+          iex> change_#{unquote(suffix)}(%#{unquote(schema)}{}, %{field: value})
+          %Ecto.Changeset{}
 
       generated via the `LazyContext.__using__/1` macro.
       """

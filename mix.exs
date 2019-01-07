@@ -4,7 +4,7 @@ defmodule LazyContext.Mixfile do
   def project do
     [
       app: :lazy_context,
-      version: "0.1.2-dev",
+      version: "0.1.3-dev",
       deps: deps(),
       elixir: "~> 1.5",
       build_embedded: Mix.env() == :prod,

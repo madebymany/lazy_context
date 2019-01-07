@@ -15,7 +15,7 @@ Add `:lazy_context` to your list of dependencies in `mix.exs`:
 ```elixir
 def deps do
   [
-    {:lazy_context, "~> 0.1.2-dev"}
+    {:lazy_context, "~> 0.1.3-dev"}
   ]
 end
 ```
