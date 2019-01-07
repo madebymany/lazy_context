@@ -15,7 +15,7 @@ Add `:lazy_context` to your list of dependencies in `mix.exs`:
 ```elixir
 def deps do
   [
-    {:lazy_context, "~> 0.1.0"}
+    {:lazy_context, "~> 0.1.2-dev"}
   ]
 end
 ```
@@ -43,13 +43,19 @@ defmodule MyApp.Users do
     # this can be omitted if the repo was set in the context
     repo: MyApp.Repo,
     preloads: [:pets]
+
+  # functions can be overridden
+  def list_users() do
+    # custom code here
+  end
 end
 ```
 
 ## TODO
 
-- [ ] Tests
+- [x] Tests
 - [ ] Improve README
-- [ ] Generate documentation
-- [ ] Publish on hex.pm
-- [ ] Allow custom pluralized function names
+- [x] Generate documentation
+- [x] Publish on hex.pm
+- [x] Allow custom pluralized function names
+- [ ] Improve error handling if `repo` or other mandatory options not provided
