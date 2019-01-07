@@ -4,7 +4,7 @@ defmodule LazyContext.Mixfile do
   def project do
     [
       app: :lazy_context,
-      version: "0.1.1-dev",
+      version: "0.1.2-dev",
       deps: deps(),
       elixir: "~> 1.5",
       build_embedded: Mix.env() == :prod,
@@ -19,7 +19,6 @@ defmodule LazyContext.Mixfile do
       source_url: "https://github.com/madebymany/lazy_context",
       docs: [
         main: "LazyContext", # The main page in the docs
-        # logo: "path/to/logo.png",
         extras: ["README.md"]
       ],
       aliases: aliases()
