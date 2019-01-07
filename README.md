@@ -59,3 +59,4 @@ end
 - [x] Publish on hex.pm
 - [x] Allow custom pluralized function names
 - [ ] Improve error handling if `repo` or other mandatory options not provided
+- [ ] Enable `only` and `except` options to specify which functions should be included
