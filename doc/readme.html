@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="ExDoc v0.18.4">
+    <title>LazyContext – LazyContext v0.1.2-dev</title>
+    <link rel="stylesheet" href="dist/app-480ffdc169.css" />
+    
+      <link rel="canonical" href="https://hexdocs.pm/lazy_context/readme.html" />
+    
+    <script src="dist/sidebar_items-4e3ccf2fb3.js"></script>
+    
+    
+    
+    
+  </head>
+  <body data-type="extras">
+    <script>try { if(localStorage.getItem('night-mode')) document.body.className += ' night-mode'; } catch (e) { }</script>
+
+<div class="main">
+<button class="sidebar-button sidebar-toggle">
+  <span class="icon-menu" aria-hidden="true"></span>
+  <span class="sr-only">Toggle Sidebar</span>
+</button>
+<button class="sidebar-button night-mode-toggle">
+  <span class="icon-theme" aria-hidden="true"></span>
+  <span class="sr-only">Toggle Theme</span>
+</button>
+<section class="sidebar">
+
+  
+  <a href="LazyContext.html" class="sidebar-projectLink">
+    <div class="sidebar-projectDetails">
+      <h1 class="sidebar-projectName">
+        LazyContext
+      </h1>
+      <h2 class="sidebar-projectVersion">
+        v0.1.2-dev
+      </h2>
+    </div>
+    
+  </a>
+
+  <form class="sidebar-search" action="search.html">
+    <button type="submit" class="search-button">
+      <span class="icon-search" aria-hidden="true"></span>
+    </button>
+    <input name="q" type="text" id="search-list" class="search-input" placeholder="Search" aria-label="Search" autocomplete="off" />
+  </form>
+
+  <ul class="sidebar-listNav">
+    <li><a id="extras-list" href="#full-list">Pages</a></li>
+
+    
+      <li><a id="modules-list" href="#full-list">Modules</a></li>
+    
+
+    
+
+    
+  </ul>
+  <div class="gradient"></div>
+  <ul id="full-list" class="sidebar-fullList"></ul>
+</section>
+
+<section class="content">
+  <div class="content-outer">
+    <div id="content" class="content-inner">
+
+
+<h1>LazyContext</h1>
+<p>This library enables you to implement default functions in Phoenix contexts</p>
+<p>See <a href="#usage">Usage</a> for example usage.</p>
+<h2 id="documentation" class="section-heading">
+  <a href="#documentation" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
+  Documentation
+</h2>
+
+<p>Documentation is available at <a href="https://hexdocs.pm/lazy_context">https://hexdocs.pm/lazy_context</a></p>
+<h2 id="installation" class="section-heading">
+  <a href="#installation" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
+  Installation
+</h2>
+
+<p>Add <code class="inline">:lazy_context</code> to your list of dependencies in <code class="inline">mix.exs</code>:</p>
+<pre><code class="elixir">def deps do
+  [
+    {:lazy_context, &quot;~&gt; 0.1.2-dev&quot;}
+  ]
+end</code></pre>
+<h2 id="configuration" class="section-heading">
+  <a href="#configuration" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
+  Configuration
+</h2>
+
+<p>Optionally set the repo for LazyContext config in your <code class="inline">config/config.exs</code> file:</p>
+<pre><code class="elixir">config :lazy_context,
+  repo: YourApplication.Repo</code></pre>
+<h2 id="usage" class="section-heading">
+  <a href="#usage" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
+  Usage
+</h2>
+
+<pre><code class="elixir">defmodule MyApp.Users do
+  @moduledoc &quot;&quot;&quot;
+  The Accounts context.
+  &quot;&quot;&quot;
+
+  use LazyContext,
+    schema: User,
+    suffix: :user,
+    # this can be omitted if the repo was set in the context
+    repo: MyApp.Repo,
+    preloads: [:pets]
+
+  # functions can be overridden
+  def list_users() do
+    # custom code here
+  end
+end</code></pre>
+<h2 id="todo" class="section-heading">
+  <a href="#todo" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
+  TODO
+</h2>
+
+<ul>
+<li>[x] Tests
+</li>
+<li>[ ] Improve README
+</li>
+<li>[x] Generate documentation
+</li>
+<li>[x] Publish on hex.pm
+</li>
+<li>[x] Allow custom pluralized function names
+</li>
+<li>[ ] Improve error handling if <code class="inline">repo</code> or other mandatory options not provided
+</li>
+<li>[ ] Enable <code class="inline">only</code> and <code class="inline">except</code> options to specify which functions should be included
+</li>
+</ul>
+
+      <footer class="footer">
+        <p>
+          <span class="line">
+            Built using
+            <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" rel="help" target="_blank">ExDoc</a> (v0.18.4),
+          </span>
+          <span class="line">
+            designed by
+            <a href="https://twitter.com/dignifiedquire" target="_blank" title="@dignifiedquire">Friedel Ziegelmayer</a>.
+            </span>
+        </p>
+      </footer>
+    </div>
+  </div>
+</section>
+</div>
+  <script src="dist/app-9bd040e5e5.js"></script>
+  
+  
+  
+  
+  </body>
+</html>
+
