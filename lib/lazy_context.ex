@@ -99,6 +99,8 @@ defmodule LazyContext do
       {f.list, 0},
       {f.get, 1},
       {f.get!, 1},
+      {f.create, 0},
+      {f.create!, 0},
       {f.create, 1},
       {f.create!, 1},
       {f.create_or_update, 1},
