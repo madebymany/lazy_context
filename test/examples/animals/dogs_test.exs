@@ -75,4 +75,18 @@ defmodule LazyContext.Examples.DogsTest do
     assert CreateOrUpdateTest.list_dogs() |> length() === 2
   end
 
+  test "functions are overridable" do
+    defmodule OverridableTest do
+      use LazyContext,
+        schema: Dog,
+        suffix: :dog
+
+      def get_dog(id) do
+        super(id)
+      end
+    end
+
+    dog = insert(:dog)
+    assert %Dog{} = OverridableTest.get_dog(dog.id)
+  end
 end

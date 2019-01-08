@@ -415,7 +415,7 @@ defmodule LazyContext do
         @repo.get_by(unquote(schema), get_attrs)
       end
 
-      @defoverridable unquote(overridables)
+      defoverridable unquote(overridables)
     end
   end
 end
