@@ -4,7 +4,7 @@ defmodule LazyContext.Mixfile do
   def project do
     [
       app: :lazy_context,
-      version: "0.1.3-dev",
+      version: "0.1.4-dev",
       deps: deps(),
       elixir: "~> 1.5",
       build_embedded: Mix.env() == :prod,
@@ -42,7 +42,7 @@ defmodule LazyContext.Mixfile do
     [extra_applications: [:logger]]
   end
 
-  defp elixirc_paths(:test), do: ["test/support", "lib"]
+  defp elixirc_paths(:test), do: ["test/support", "lib", "examples"]
   defp elixirc_paths(_), do: ["lib"]
 
   # Run "mix help deps" to learn about dependencies.
@@ -50,7 +50,7 @@ defmodule LazyContext.Mixfile do
     [
       {:ecto, "~> 3.0"},
       {:dialyxir, "~> 0.5", only: :dev, runtime: false},
-      {:ex_doc, "~> 0.18.0", only: :dev, runtime: false},
+      {:ex_doc, "~> 0.18.0", only: [:dev, :test], runtime: false},
       {:postgrex, ">= 0.0.0", only: [:dev, :test]},
       {:ecto_sql, "~> 3.0-rc.1", only: [:dev, :test]},
       {:ex_machina, "~> 2.2", only: :test}
