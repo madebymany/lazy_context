@@ -38,7 +38,6 @@ defmodule LazyContext do
     create_or_update_uniqueness_keys: [atom()]
   ]
 
-
   @doc """
   Inserts functions around an Ecto Schema. All inserted functions are overridable
 
@@ -167,7 +166,7 @@ defmodule LazyContext do
 
       generated via the `LazyContext.__using__/1` macro.
       """
-      @spec unquote(f.get)(integer()) :: unquote(suffix)() | nil
+      @spec unquote(f.get)(integer() | String.t()) :: unquote(suffix)() | nil
       def unquote(f.get)(id) do
         p = get_preloads(:get, unquote(preloads))
 
@@ -207,7 +206,7 @@ defmodule LazyContext do
 
       generated via the `LazyContext.__using__/1` macro.
       """
-      @spec unquote(f.get!)(integer()) :: unquote(suffix)() | no_return()
+      @spec unquote(f.get!)(integer() | String.t()) :: unquote(suffix)() | no_return()
       def unquote(f.get!)(id) do
         p = get_preloads(:get!, unquote(preloads))
 
