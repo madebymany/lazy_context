@@ -147,7 +147,7 @@ defmodule LazyContext do
 
       generated via the `LazyContext.__using__/1` macro.
       """
-      @spec unquote(f.get)(map()) :: list(unquote(suffix)()) | nil
+      @spec unquote(f.get)(map()) :: unquote(suffix)() | nil
       def unquote(f.get)(attrs) when is_map(attrs) do
         p = get_preloads(:get, unquote(preloads))
 
@@ -167,7 +167,7 @@ defmodule LazyContext do
 
       generated via the `LazyContext.__using__/1` macro.
       """
-      @spec unquote(f.get)(integer()) :: list(unquote(suffix)()) | nil
+      @spec unquote(f.get)(integer()) :: unquote(suffix)() | nil
       def unquote(f.get)(id) do
         p = get_preloads(:get, unquote(preloads))
 
@@ -187,7 +187,7 @@ defmodule LazyContext do
 
       generated via the `LazyContext.__using__/1` macro.
       """
-      @spec unquote(f.get!)(map()) :: list(unquote(suffix)()) | no_return()
+      @spec unquote(f.get!)(map()) :: unquote(suffix)() | no_return()
       def unquote(f.get!)(attrs) when is_map(attrs) do
         p = get_preloads(:get!, unquote(preloads))
 
@@ -207,7 +207,7 @@ defmodule LazyContext do
 
       generated via the `LazyContext.__using__/1` macro.
       """
-      @spec unquote(f.get!)(integer()) :: list(unquote(suffix)()) | no_return()
+      @spec unquote(f.get!)(integer()) :: unquote(suffix)() | no_return()
       def unquote(f.get!)(id) do
         p = get_preloads(:get!, unquote(preloads))
 

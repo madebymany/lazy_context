@@ -4,7 +4,7 @@ defmodule LazyContext.Mixfile do
   def project do
     [
       app: :lazy_context,
-      version: "0.1.4-dev",
+      version: "0.1.5-dev",
       deps: deps(),
       elixir: "~> 1.5",
       build_embedded: Mix.env() == :prod,
@@ -49,7 +49,7 @@ defmodule LazyContext.Mixfile do
   defp deps do
     [
       {:ecto, "~> 3.0"},
-      {:dialyxir, "~> 0.5", only: :dev, runtime: false},
+      {:dialyxir, "~> 0.5", only: [:dev, :test], runtime: false},
       {:ex_doc, "~> 0.18.0", only: [:dev, :test], runtime: false},
       {:postgrex, ">= 0.0.0", only: [:dev, :test]},
       {:ecto_sql, "~> 3.0-rc.1", only: [:dev, :test]},
